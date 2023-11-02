@@ -8,6 +8,7 @@ interface Props {
   image: string
   downloadNumber: number
   slug?: string
+  downloadLink: string
 }
 
 export default function ResourceCard({
@@ -15,10 +16,11 @@ export default function ResourceCard({
   id,
   image,
   title,
+  downloadLink,
 }: Props) {
   return (
     <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[356px]">
-      <Link href={`/resource/${id}`}>
+      <Link href={downloadLink} target="_blank">
         <CardHeader className="flex-center flex-col gap-2.5 !p-0">
           <div>
             <Image
@@ -45,7 +47,8 @@ export default function ResourceCard({
           {downloadNumber}
         </div>
         <Link
-          href={`/resource/${id}`}
+          href={downloadLink}
+          target="_blank"
           className="flex-center text-gradient_purple-blue body-semibold gap-1.5"
         >
           Download Now

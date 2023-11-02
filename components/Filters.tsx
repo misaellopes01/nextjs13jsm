@@ -20,7 +20,7 @@ export default function Filters() {
 
       newUrl = formUrlQuery({
         params: searchParams.toString(),
-        key: 'category',
+        keysToRemove: ['category'],
         value: null,
       })
     } else {
