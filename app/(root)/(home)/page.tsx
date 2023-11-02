@@ -12,7 +12,7 @@ interface Props {
 
 export default async function Home({ searchParams }: Props) {
   const resources = await getResources({
-    query: '',
+    query: searchParams?.query || '',
     category: searchParams?.category || '',
     page: '1',
   })
